@@ -3,6 +3,9 @@
   font-family: 'Roboto', sans-serif;
 } */
 
+/* outline: 2px solid red;
+  outline-offset: -2px; */
+
 :root {
   /* fonts */
   --main-font: 'Roboto', sans-serif;
@@ -22,6 +25,7 @@
 
   /* others */
   --border-cl: #eeeeee;
+  --main-icon-cl: #afb1b8;
 }
 body {
   font-family: var(--main-font);
@@ -60,9 +64,6 @@ p {
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
-
-  /* outline: 2px solid red;
-  outline-offset: -2px; */
 }
 .btn {
   font-family: inherit;
@@ -70,7 +71,7 @@ p {
   border: none;
 }
 
-/* header */
+/*---------------------------- header ----------------------*/
 .header {
   border-bottom: 1px solid #ececec;
 }
@@ -102,7 +103,10 @@ p {
   color: var(--main-link-cl);
 }
 
-/* .header-item, */
+.header-container {
+  display: flex;
+  gap: 10px;
+}
 
 .header-link,
 .header-mail,
@@ -114,6 +118,10 @@ p {
   line-height: calc(16 / 14);
   letter-spacing: 0.02em;
 }
+.header-icon {
+  fill: var(--main-txt-item);
+  cursor: pointer;
+}
 
 /* header hover focus */
 
@@ -124,9 +132,14 @@ p {
   color: var(--main-link-cl);
 }
 
+.header-contacts:hover .header-icon,
+.header-contacts:focus .header-icon {
+  fill: var(--main-link-cl);
+}
+
 .header-list {
   display: flex;
-  gap: 50px;
+  gap: 30px;
 }
 
 .header-contacts {
@@ -144,17 +157,7 @@ p {
   height: auto;
 }
 
-/* hero */
-
-/* .hero {
-  text-align: center;
-  padding: 200px 0;
-  background-color: var(--dark-bg-cl);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-image: url(../images/hero-bgn.jpg);
-} */
+/* -------------------<!-- Шапка --> hero -------------------------*/
 
 .hero-container {
   text-align: center;
@@ -167,11 +170,13 @@ p {
 
   padding: 200px 0;
 
-  background-color: var(--dark-bg-cl);
+  background-color: #c4c4c4;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url(../images/hero-bgn.jpg);
+  background-image: linear-gradient(to right, rgba(47, 47, 58, 0.4), rgba(47, 47, 58, 0.4)),
+    url(../images/hero-bgn.jpg);
+  background-size: contain;
 }
 
 .hero-title {
@@ -187,9 +192,6 @@ p {
 }
 
 .hero-btn {
-  /* max-width: 240px;
-  min-width: 200px;
-  min-height: 50px; */
   padding: 10px 32px;
   color: var(--btn-txt-cl);
   font-weight: 700;
@@ -206,7 +208,7 @@ p {
   background: var(--main-bt-bg-cl);
 }
 
-/* <!-- Особенности --> */
+/* <!--------------------------- Особенности --------------------> */
 .section {
   padding-top: 94px;
   padding-bottom: 94px;
@@ -233,6 +235,21 @@ p {
   width: 270px;
 }
 
+.features-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 30px;
+
+  width: 270px;
+  height: 120px;
+  background-color: #f5f4fa;
+
+  /* outline: 2px solid red;
+  outline-offset: -2px; */
+}
+
 .features-title {
   margin-bottom: 10px;
   flex-basis: calc((100%-90px) / 4);
@@ -246,17 +263,14 @@ p {
   color: var(--main-txt-item);
 }
 
-/* <!-- Чем мы занимаемся --> */
+/* <!---------------------Чем мы занимаемся ------------------> */
 .work {
-  padding: 0;
+  padding-top: 0px;
 }
 
-/* .work-container {
-  padding-bottom: 94px;
-} */
-
 .work-title,
-.team-title {
+.team-title,
+.customer-title {
   text-align: center;
   margin-bottom: 50px;
   font-size: 36px;
@@ -268,11 +282,8 @@ p {
   gap: 30px;
 }
 
-/* <!-- Наша команда --> */
+/* <!----------------------- Наша команда ---------------------> */
 
-/* .team-container {
-  padding-bottom: 94px;
-} */
 .team {
   background: var(--team-bg-cl);
 }
@@ -292,14 +303,12 @@ p {
 }
 .team-item-title {
   margin-bottom: 10px;
-  /* padding-left: 5px;
-  padding-right: 5px;
-  text-align: center; */
   font-weight: 500;
   font-size: 16px;
   line-height: calc(19 / 16);
 }
 .team-item-descr {
+  margin-bottom: 16px;
   text-align: center;
   font-weight: 400;
   font-size: 16px;
@@ -307,11 +316,7 @@ p {
   color: var(--main-txt-item);
 }
 
-/* Портфолио */
-/* .portfolio {
-  margin-top: 94px;
-  margin-bottom: 94px;
-} */
+/* -----------------------Портфолио------------------------- */
 
 .portfolio-list-btn {
   margin-bottom: 50px;
@@ -356,7 +361,6 @@ p {
 .gallery-item:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
-  /* text-align: center; */
 }
 
 .gallery-wrapper {
@@ -381,7 +385,42 @@ p {
   color: var(--main-txt-item);
 }
 
-/* footer */
+/* <!--------------- Regular customers -----------------------> */
+
+.customers-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.customers-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+
+  width: 170px;
+  height: 92px;
+  background-color: var(--white-bg-cl);
+}
+
+.customers-icon {
+  fill: var(--main-icon-cl);
+}
+
+.customers-link:hover,
+.socials-link:focus {
+  border: 1px solid var(--main-link-cl);
+}
+
+.customers-link:hover .customers-icon,
+.socials-link:focus .customers-icon {
+  fill: var(--main-link-cl);
+}
+
+/*---------------------- footer------------------------------- */
 
 .footer {
   padding-top: 60px;
@@ -389,10 +428,12 @@ p {
   background: var(--dark-bg-cl);
 }
 
-/* .footer-container {
-  padding-top: 60px;
-  padding-bottom: 60px;
-} */
+.footer-container {
+  display: flex;
+  align-items: baseline;
+
+  gap: 70px;
+}
 
 .address {
   margin-top: 20px;
@@ -424,4 +465,64 @@ p {
 }
 .second-footer-cl {
   color: var(--btn-txt-cl);
+}
+
+.footer-title {
+  font-size: 14px;
+  line-height: calc(16 / 14);
+  text-transform: uppercase;
+  color: var(--btn-txt-cl);
+}
+
+.footer-socials-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+
+  background-color: #44454e;
+
+  fill: var(--btn-txt-cl);
+}
+
+.footer-socials-link:hover,
+.footer-socials-link:focus {
+  background-color: var(--main-link-cl);
+}
+
+/* --------------Socials----------- */
+.socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.socials-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--white-bg-cl);
+
+
+.socials-icon {
+  fill: var(--main-icon-cl);
+}
+
+.socials-link:hover,
+.socials-link:focus {
+  background-color: var(--main-link-cl);
+}
+
+.socials-link:hover .socials-icon,
+.socials-link:focus .socials-icon {
+  fill: var(--white-bg-cl);
 }
