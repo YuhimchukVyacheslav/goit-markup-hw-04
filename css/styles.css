@@ -511,7 +511,7 @@ p {
   height: 44px;
   border-radius: 50%;
   background-color: var(--white-bg-cl);
-
+}
 
 .socials-icon {
   fill: var(--main-icon-cl);
