@@ -103,24 +103,25 @@ p {
   color: var(--main-link-cl);
 }
 
-.header-container {
+/* .header-container {
   display: flex;
   gap: 10px;
-}
+} */
 
-.header-link,
-.header-mail,
-.header-tel {
-  display: block;
+.header-link {
+  display: flex;
   padding-top: 32px;
   padding-bottom: 32px;
   font-weight: 500;
   line-height: calc(16 / 14);
   letter-spacing: 0.02em;
+  align-items: center;
 }
+
 .header-icon {
-  fill: var(--main-txt-item);
+  fill: currentColor;
   cursor: pointer;
+  margin-right: 10px;
 }
 
 /* header hover focus */
@@ -139,13 +140,13 @@ p {
 
 .header-list {
   display: flex;
-  gap: 30px;
+  gap: 50px;
 }
 
-.header-contacts {
+.header-mail,
+.header-tel{
   color: var(--main-txt-item);
 }
-
 .header-link-current {
   color: var(--main-link-cl);
 }
@@ -162,7 +163,7 @@ p {
 .hero-container {
   text-align: center;
 
-  min-height: 600px;
+  height: 600px;
   max-width: 1600px;
 
   margin-left: auto;
@@ -176,7 +177,6 @@ p {
   background-repeat: no-repeat;
   background-image: linear-gradient(to right, rgba(47, 47, 58, 0.4), rgba(47, 47, 58, 0.4)),
     url(../images/hero-bgn.jpg);
-  background-size: contain;
 }
 
 .hero-title {
@@ -358,7 +358,12 @@ p {
   gap: 30px;
 }
 
-.gallery-item:hover {
+.gallery-link{
+  display: block;
+}
+
+.gallery-link:hover,
+.gallery-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
@@ -389,8 +394,8 @@ p {
 
 .customers-list {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center;
+  justify-content: center; */
   gap: 30px;
 }
 .customers-link {
@@ -403,20 +408,20 @@ p {
 
   width: 170px;
   height: 92px;
-  background-color: var(--white-bg-cl);
+  color: var(--main-icon-cl);
 }
 
 .customers-icon {
-  fill: var(--main-icon-cl);
+  fill: currentColor;
 }
 
 .customers-link:hover,
-.socials-link:focus {
+.customers-link:focus {
   border: 1px solid var(--main-link-cl);
 }
 
 .customers-link:hover .customers-icon,
-.socials-link:focus .customers-icon {
+.customers-link:focus .customers-icon {
   fill: var(--main-link-cl);
 }
 
@@ -472,6 +477,7 @@ p {
   line-height: calc(16 / 14);
   text-transform: uppercase;
   color: var(--btn-txt-cl);
+  padding-bottom: 20px;
 }
 
 .footer-socials-link {
@@ -485,7 +491,10 @@ p {
 
   background-color: #44454e;
 
-  fill: var(--btn-txt-cl);
+  color: var(--btn-txt-cl);
+}
+.footer-socials-icon{
+  fill: currentColor;
 }
 
 .footer-socials-link:hover,
@@ -496,10 +505,8 @@ p {
 /* --------------Socials----------- */
 .socials {
   display: flex;
-  align-items: center;
   justify-content: center;
   gap: 10px;
-  margin-top: 20px;
 }
 
 .socials-link {
@@ -510,11 +517,13 @@ p {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background-color: var(--white-bg-cl);
 }
 
+.socials-link{
+ fill: var(--main-icon-cl); 
+}
 .socials-icon {
-  fill: var(--main-icon-cl);
+  color: currentColor;
 }
 
 .socials-link:hover,
