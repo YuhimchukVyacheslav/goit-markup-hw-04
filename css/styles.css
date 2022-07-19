@@ -517,18 +517,21 @@ p {
   width: 44px;
   height: 44px;
   border-radius: 50%;
+
+  color: var(--main-icon-cl);
 }
 
-.socials-link{
+/* .socials-link{
  fill: var(--main-icon-cl); 
-}
+} */
 .socials-icon {
-  color: currentColor;
+  fill: currentColor;
 }
 
 .socials-link:hover,
 .socials-link:focus {
   background-color: var(--main-link-cl);
+  color: var(--btn-txt-cl);
 }
 
 .socials-link:hover .socials-icon,
